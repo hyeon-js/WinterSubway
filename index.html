@@ -65,7 +65,7 @@
         loadData();
         async function loadData() {
             var data = await fetch('https://api.hyeonjs.com/winter').then((response) => response.json());
-            document.getElementById("info").innerHTML = '위치: ' + data.status + '<br>정보: ' + data.terminal + ' ' + data.trainNo + '번 열차';
+            document.getElementById("info").innerHTML = '위치: ' + data.status + '<br>정보: ' + (data.terminal.endsWith('선순환') ? data.terminal : data.terminal + '행') + ' ' + data.trainNo + '번 열차';
         }
     </script>
 </body>
